@@ -1,29 +1,26 @@
 {
-  "name": "tasky-api",
+  "name": "movies-api",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "start": "babel-node index.js",
-    "dev": "nodemon --exec npm start"
+    "dev": "babel-node ./initialise-dev/initDevDB.js && nodemon --exec npm start"
   },
-  
-  "author": "Sunny_Keenan/20097973",
+  "author": "rbirney",
   "license": "ISC",
-  "dependencies": {
-    "dotenv": "^16.4.5",
-    "express": "^4.19.2",
-    "express-async-handler": "^1.2.0",
-    "mongoose": "^8.3.4",
-    "uuid": "^9.0.1"
-  },
   "devDependencies": {
     "@babel/core": "^7.24.5",
     "@babel/eslint-parser": "^7.24.5",
     "@babel/node": "^7.23.9",
     "@babel/preset-env": "^7.24.5",
-    "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
     "nodemon": "^3.1.0"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-async-handler": "^1.2.0",
+    "mongoose": "^8.0.1"
   }
 }
