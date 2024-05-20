@@ -1,5 +1,5 @@
 import express from 'express';
-import User from './userModel';
+import User from './userModel.js';
 
 const router = express.Router(); // eslint-disable-line
 

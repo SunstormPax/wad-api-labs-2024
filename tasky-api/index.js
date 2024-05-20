@@ -1,14 +1,11 @@
 import dotenv from 'dotenv';
 import express from 'express';
-import tasksRouter from './api/tasks';
-import './db';
-import usersRouter from './api/users';
+import tasksRouter from './api/tasks/index.js';
+import './db/index.js';
+import usersRouter from './api/users/index.js';
 import cors from 'cors';
-import moviesRouter from './api/movies';   //import movies router
 
 dotenv.config();
-
-app.use('/api/movies', moviesRouter);
 
 const errHandler = (err, req, res, next) => {
   /* if the error in development then send stack trace to display whole error,
@@ -23,15 +20,14 @@ const app = express();
 
 const port = process.env.PORT;
 
-app.use(cors());
-
 app.use(express.json());
 
 app.use('/api/tasks', tasksRouter);
+app.use(errHandler);
 
 app.use('/api/users', usersRouter);
 
-
+app.use(cors());
 
 app.listen(port, () => {
   console.info(`Server running at ${port}`);
