@@ -4,8 +4,11 @@ import tasksRouter from './api/tasks';
 import './db';
 import usersRouter from './api/users';
 import cors from 'cors';
+import moviesRouter from './api/movies';   //import movies router
 
 dotenv.config();
+
+app.use('/api/movies', moviesRouter);
 
 const errHandler = (err, req, res, next) => {
   /* if the error in development then send stack trace to display whole error,
@@ -27,6 +30,8 @@ app.use(express.json());
 app.use('/api/tasks', tasksRouter);
 
 app.use('/api/users', usersRouter);
+
+
 
 app.listen(port, () => {
   console.info(`Server running at ${port}`);

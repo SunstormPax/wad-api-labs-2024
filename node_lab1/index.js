@@ -2,6 +2,7 @@ import http from 'http';
 import dotenv from 'dotenv';
 import greeting from './greeting.js';
 import './db';
+import moviesRouter from './api/movies';   //import movies router
 
 dotenv.config();
 const port = process.env.PORT;
